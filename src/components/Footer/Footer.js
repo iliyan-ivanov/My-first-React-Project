@@ -1,8 +1,8 @@
 
 let Footer = () => {
     return (
-        <div>
-          
+        <div className="footer">
+               <div>My footer</div>
         </div>
     );
 }

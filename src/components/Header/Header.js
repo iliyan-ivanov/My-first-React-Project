@@ -3,7 +3,7 @@ import LowerNav from './LowerNav';
 
 let Header = () => {
     return (
-        <div>
+        <div className="header">
            <UppperNav />
            <LowerNav />
         </div>
