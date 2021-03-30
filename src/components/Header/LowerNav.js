@@ -1,13 +1,13 @@
-
+import { Link } from 'react-router-dom';
 
 let LowerNav = () => {
     return (
         <nav className="lower-navigation">
             <ul>
-                <li className="main-nav-item"><a href="#">Home</a></li>
-                <li className="main-nav-item"><a href="#">Europian football</a></li>
-                <li className="main-nav-item"><a href="#">Bulgarian football</a></li>
-                <li className="main-nav-item"><a href="#">World football</a></li>
+                <li className="main-nav-item"><Link to="/">Home</Link></li>
+                <li className="main-nav-item"><Link to="/europianfootball">Europian football</Link></li>
+                <li className="main-nav-item"><Link to="/bulgarianfootball">Bulgarian football</Link></li>
+                <li className="main-nav-item"><Link to="/worldfootball">World football</Link></li>
             </ul>
         </nav>
     );

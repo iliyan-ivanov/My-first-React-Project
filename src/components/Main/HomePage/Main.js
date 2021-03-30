@@ -1,5 +1,5 @@
-import TopArticle from './TopArticle';
-import SubArticle from './SubArticles';
+import TopArticle from '../Articles/TopArticle';
+import SubArticle from '../Articles/SubArticles';
 
 let Main = () => {
     return (
