@@ -285,6 +285,11 @@ img {
 .create-btn {
   margin-bottom: 42px;
   margin-left: 555px;
+  cursor: pointer;
+}
+
+.auth-btn {
+  cursor: pointer;
 }
 
 .category-select {
