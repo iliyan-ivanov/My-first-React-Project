@@ -1,17 +1,15 @@
-import TopArticle from './Articles/TopArticle';
-import LongArticle from './Articles/LongArticle';
+import TopArticles from './Articles/TopArticles';
+import LongArticles from './Articles/LongArticles';
 
 let BGFootballPage = () => {
     return (
         <div>
             <h1 className="h1-heading">Bulgarian Football</h1>
-            <TopArticle />
-            <TopArticle />
-            <TopArticle />
-            <LongArticle />
-            <LongArticle />
-            <LongArticle />
-            <LongArticle />
+
+            <TopArticles />
+           
+            <LongArticles />
+            
         </div>
     );
 }

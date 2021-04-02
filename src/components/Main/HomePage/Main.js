@@ -1,22 +1,18 @@
-import TopArticle from '../Articles/TopArticle';
-import SubArticle from '../Articles/SubArticles';
+import TopArticles from '../Articles/TopArticles';
+import SubArticles from '../Articles/SubArticles.js';
 
-let Main = () => {
+const Main = () => {
+
     return (
         <div>
-            <TopArticle />
-            <TopArticle />
-            <TopArticle />
-            <SubArticle />
-            <SubArticle />
-            <SubArticle />
-            <SubArticle />
-            <SubArticle />
-            <SubArticle />
-            <SubArticle />
-            <SubArticle />
+
+            <TopArticles />
+
+            <SubArticles />
+
         </div>
     );
 }
+
 
 export default Main;

@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import SubArticle from './SubArticle';
+import LongArticle from './LongArticle';
 
-class SubArticles extends Component {
+class LongArticles extends Component {
     constructor(props) {
         super(props);
 
@@ -25,7 +25,7 @@ class SubArticles extends Component {
 
         return (
             <div>
-                {this.state.articles.slice(3,11).map(x => <SubArticle
+                {this.state.articles.map(x => <LongArticle
                     key={x.id}
                     title={x.title}
                     description={x.description}
@@ -36,4 +36,4 @@ class SubArticles extends Component {
     }
 }
 
-export default SubArticles;
+export default LongArticles;
