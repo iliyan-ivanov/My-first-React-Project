@@ -2,16 +2,16 @@ import { Link } from 'react-router-dom';
 
 let TopArticle = ({
     title,
-    description,
-    image
+    image,
+    id
 }) => {
 
     return (
         <div className="top-article">
             <div className="top-article-photo">
-                <Link to="/articleinfo"><img src={image}/></Link>
+                <Link to={`/${id}`}><img src={image}/></Link>
                 <h2 className="top-article-title">
-                    <Link to="/articleinfo">{title}</Link>
+                    <Link to={`/${id}`}>{title}</Link>
                 </h2>
             </div>
             {/* <div className="top-article-info">

@@ -1,14 +1,35 @@
-let ArticlePage = () => {
+import { useEffect, useState } from 'react';
+
+const ArticlePage = ({
+    match
+}) => {
+    let url = 'https://football-site-13535-default-rtdb.europe-west1.firebasedatabase.app/articles';
+
+    const [article, setArticle] = useState({});
+
+    useEffect(() => {
+        fetch(`${url}/${match.params.articleId}.json`)
+        .then(res => res.json())
+        .then(res => setArticle(res))
+        .catch(err => console.log(err))
+        
+        console.log(`${url}/${match.params.articleId}.json`);
+    }, [])
+    
+    
+    console.log(article);
+
+    
     return (
         <div className="article-page">
             <div>
-                <h1>Header</h1>
+                <h1>{article.title}</h1>
             </div>
             <div>
-                <img />
+            <img src={article.imageURL}/>
             </div>
             <div>
-                <p>Article info ...........</p>
+                <p>{article.description}</p>
             </div>
 
         </div>

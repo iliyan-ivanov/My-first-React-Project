@@ -1,7 +1,9 @@
-import { Component } from 'react';
-import TopArticle from './TopArticle';
 
-class TopArticles extends Component {
+import { Component } from 'react';
+import TopArticle from './Articles/TopArticle';
+import LongArticle from './Articles/LongArticle';
+
+class NationalTeams extends Component {
     constructor(props) {
         super(props);
 
@@ -23,11 +25,12 @@ class TopArticles extends Component {
                     data.push(res[x])
                 })
 
-
                 this.setState({ articles: data })
             })
             .catch(error => console.log(error))
+
     };
+
 
 
 
@@ -35,16 +38,26 @@ class TopArticles extends Component {
 
         return (
             <div>
-                {this.state.articles.slice(0, 3).map(x => <TopArticle
+                <h1 className="h1-heading">National Teams</h1>
+
+                {this.state.articles.filter(x => x.category == "National Teams").slice(0, 3).map(x => <TopArticle
                     key={x.id}
                     title={x.title}
                     description={x.description}
                     image={x.imageURL}
                     id={x.id}
                 />)}
+
+                {this.state.articles.filter(x => x.category == "National Teams").map(x => <LongArticle
+                    key={x.id}
+                    title={x.title}
+                    description={x.description}
+                    image={x.imageURL}
+                />)}
+
             </div>
         );
     }
 }
 
-export default TopArticles;
+export default NationalTeams;

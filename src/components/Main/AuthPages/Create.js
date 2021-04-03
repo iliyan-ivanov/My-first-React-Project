@@ -42,7 +42,7 @@ let Create = () => {
                     <select className="category-select" type="text" name="category">
                         <option value="Europian Football">Europian Football</option>
                         <option value="Bulgarian Football">Bulgarian Football</option>
-                        <option value="World Football">World Football</option>
+                        <option value="National Teams">National Teams</option>
                     </select>
                 </div>
 

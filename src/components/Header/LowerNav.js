@@ -7,7 +7,7 @@ let LowerNav = () => {
                 <li className="main-nav-item"><Link to="/">Home</Link></li>
                 <li className="main-nav-item"><Link to="/europianfootball">Europian football</Link></li>
                 <li className="main-nav-item"><Link to="/bulgarianfootball">Bulgarian football</Link></li>
-                <li className="main-nav-item"><Link to="/worldfootball">World football</Link></li>
+                <li className="main-nav-item"><Link to="/nationalteams">National Teams</Link></li>
             </ul>
         </nav>
     );
