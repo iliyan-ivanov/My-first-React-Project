@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ArticlePage = ({
     match
@@ -9,30 +10,25 @@ const ArticlePage = ({
 
     useEffect(() => {
         fetch(`${url}/${match.params.articleId}.json`)
-        .then(res => res.json())
-        .then(res => setArticle(res))
-        .catch(err => console.log(err))
-        
-        console.log(`${url}/${match.params.articleId}.json`);
-    }, [])
-    
-    
-    console.log(article);
+            .then(res => res.json())
+            .then(res => setArticle(res))
+            .catch(err => console.log(err))
+    }, []);
 
-    
     return (
-        <div className="article-page">
-            <div>
-                <h1>{article.title}</h1>
-            </div>
-            <div>
-            <img src={article.imageURL}/>
-            </div>
-            <div>
-                <p>{article.description}</p>
-            </div>
-
-        </div>
+      
+            <section className="info-part">
+                <div className="details-title">
+                    <h1>{article.title}</h1>
+                </div>
+                <div className="details-img">
+                    <img src={article.imageURL} />
+                </div>
+                <div className="details-description">
+                    <p>{article.description}</p>
+                </div>
+            </section>
+            
     );
 }
 

@@ -14,16 +14,14 @@ class SubArticles extends Component {
         fetch('https://football-site-13535-default-rtdb.europe-west1.firebasedatabase.app/articles.json')
             .then(res => res.json())
             .then(res => {
-                  // let data = Object.values(res);
+                let data = [];
 
-                  let data = [];
+                Object.keys(res).reverse().map(x => {
+                    res[x]['id'] = x;
+                    data.push(res[x])
+                });
 
-                  Object.keys(res).reverse().map(x => {
-                      res[x]['id'] = x;
-                      data.push(res[x])
-                  })
-  
-                  this.setState({ articles: data })
+                this.setState({ articles: data })
             })
             .catch(error => console.log(error))
     };
@@ -32,7 +30,7 @@ class SubArticles extends Component {
 
         return (
             <div>
-                {this.state.articles.slice(3,11).map(x => <SubArticle
+                {this.state.articles.slice(3, 11).map(x => <SubArticle
                     key={x.id}
                     title={x.title}
                     description={x.description}

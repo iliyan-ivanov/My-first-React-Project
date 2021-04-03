@@ -48,11 +48,12 @@ class NationalTeams extends Component {
                     id={x.id}
                 />)}
 
-                {this.state.articles.filter(x => x.category == "National Teams").map(x => <LongArticle
+                {this.state.articles.filter(x => x.category == "National Teams").slice(3).map(x => <LongArticle
                     key={x.id}
                     title={x.title}
                     description={x.description}
                     image={x.imageURL}
+                    id={x.id}
                 />)}
 
             </div>

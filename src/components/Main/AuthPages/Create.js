@@ -8,7 +8,7 @@ let Create = () => {
             title,
             description,
             imageURL,
-            date: new Date().toJSON().slice(0,10)
+            date: new Date().toJSON().slice(0, 10)
         }
 
         return fetch(url, {
@@ -31,7 +31,7 @@ let Create = () => {
         title.value = '';
         description.value = '';
         imageURL.value = '';
-           }
+    }
 
     return (
         <form className="create-form" onSubmit={onCreateHandler}>

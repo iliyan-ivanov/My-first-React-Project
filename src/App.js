@@ -15,6 +15,7 @@ function App() {
     return (
         <div className="app">
             <Header />
+
             <Switch>
                 <Route path="/" exact>
                     <Main />
@@ -28,7 +29,9 @@ function App() {
                 <Route path="/:articleId" component={ArticlePage} />
                 <Route render={() => <h1>Please insert valid url!</h1>} />
             </Switch>
+
             <Footer />
+
         </div>
     );
 }

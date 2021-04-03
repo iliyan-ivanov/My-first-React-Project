@@ -100,6 +100,7 @@ nav .main-nav-item a:hover {
   background-color: #FFF;
   width: 380px;
   display: inline-block;
+  margin-bottom: 20px;
 }
 
 .top-article .top-article-photo {
@@ -154,7 +155,7 @@ nav .main-nav-item a:hover {
   background-color: #FFF;
   margin-right: 0px;
   width: 282.5px;
-  margin-bottom: 25px;
+  margin-bottom: 2px;
   display: inline-block;
 }
 
@@ -174,7 +175,7 @@ img {
   overflow: hidden;
 }
 
-.sub-article-info {
+/* .sub-article-info {
   float: left;
   width: 100%;
   box-sizing: border-box;
@@ -187,7 +188,7 @@ img {
   margin-top: 0;
   box-shadow: none;
   line-height: inherit;
-}
+} */
 
 .sub-article-title {
   font-size: 15px;
@@ -296,7 +297,7 @@ img {
 
 .create-description {
   display: block;
-  height: 200px;
+  height: 100px;
   width: 1160px;
   margin-bottom: 20px;
 }
@@ -321,3 +322,7 @@ img {
   display:flex;
 }
 
+.details-img {
+  height: 400px;
+  width: 600px;
+}
