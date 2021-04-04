@@ -28,10 +28,10 @@ let Login = ({
             <h2 className="auth-h2">Login</h2>
             <div className="auth-div">
                 <label htmlFor="email">Email</label>
-                <input type="email" placeholder="Email" name="email" />
+                <input type="email" id="email" placeholder="Email" name="email" />
 
                 <label htmlFor="password">Password</label>
-                <input type="password" placeholder="Password" name="password" />
+                <input type="password" id="password" placeholder="Password" name="password" />
             </div>
             <button type="submit" className="auth-btn">Login</button>
 

@@ -9,7 +9,7 @@ import Footer from './components/Footer/Footer';
 import ArticlePage from './components/Main/Articles/ArticlePage';
 import Login from './components/Main/AuthPages/Login';
 import Register from './components/Main/AuthPages/Register';
-import Create from './components/Main/AuthPages/Create';
+import Create from './components/Main/CreatePage/Create';
 import { auth } from './config/firebase';
 import { useEffect, useState } from 'react';
 

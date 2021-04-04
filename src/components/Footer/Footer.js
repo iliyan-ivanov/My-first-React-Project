@@ -1,8 +1,9 @@
+import style from './Footer.module.css';
 
 let Footer = () => {
     return (
-        <div className="footer">
-               <div>My footer</div>
+        <div className={style.footer}>
+               <div>All rights reserved © | Football Site</div>
         </div>
     );
 }
