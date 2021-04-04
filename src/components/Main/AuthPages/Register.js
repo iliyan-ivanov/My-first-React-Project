@@ -1,7 +1,28 @@
+import firebase from 'firebase/app';
 
-let Register = () => {
+let Register = ({
+    history
+}) => {
+
+    const onRegisterHandler = (e) => {
+        e.preventDefault();
+
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then(res => {
+                console.log('Register')
+                history.push('/')
+            })
+            .catch(err => {console.log(err)
+            // email.value = '';
+            // password.value = '';)
+            });
+    }
+
     return (
-        <form class="login-form">
+        <form className="login-form" onSubmit={onRegisterHandler}>
             <h2 className="auth-h2">Register</h2>
             <div className="auth-div">
                 <label htmlFor="email">Email</label>

@@ -322,7 +322,8 @@ img {
   display:flex;
 }
 
-.details-img {
+.details-img img {
   height: 400px;
   width: 600px;
+  max-width: 100%;
 }

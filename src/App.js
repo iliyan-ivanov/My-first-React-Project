@@ -10,11 +10,20 @@ import ArticlePage from './components/Main/Articles/ArticlePage';
 import Login from './components/Main/AuthPages/Login';
 import Register from './components/Main/AuthPages/Register';
 import Create from './components/Main/AuthPages/Create';
+import { auth } from './config/firebase';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        auth.onAuthStateChanged(setUser)
+    }, [])
+
     return (
         <div className="app">
-            <Header />
+            <Header user={user} />
 
             <Switch>
                 <Route path="/" exact>

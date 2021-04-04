@@ -1,7 +1,30 @@
+import firebase from 'firebase/app';
 
-let Login = () => {
+let Login = ({
+    history
+}) => {
+
+    const onLoginHandler = (e) => {
+        e.preventDefault();
+
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then((res) => {
+                console.log(res);
+                history.push('/')
+            })
+            .catch(err => {
+                console.log(err)
+                // email.value = '';
+                // password.value = '';
+            })
+            
+    }
+
     return (
-        <form className="login-form">
+        <form className="login-form" onSubmit={onLoginHandler}>
             <h2 className="auth-h2">Login</h2>
             <div className="auth-div">
                 <label htmlFor="email">Email</label>
