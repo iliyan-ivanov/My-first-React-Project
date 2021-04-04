@@ -14,7 +14,6 @@ class TopArticles extends Component {
         fetch('https://football-site-13535-default-rtdb.europe-west1.firebasedatabase.app/articles.json')
             .then(res => res.json())
             .then(res => {
-                // let data = Object.values(res);
 
                 let data = [];
 
@@ -23,16 +22,13 @@ class TopArticles extends Component {
                     data.push(res[x])
                 })
 
-
                 this.setState({ articles: data })
             })
             .catch(error => console.log(error))
     };
 
 
-
     render() {
-
         return (
             <div>
                 {this.state.articles.slice(0, 3).map(x => <TopArticle

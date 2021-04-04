@@ -1,4 +1,3 @@
-
 import { Component } from 'react';
 import TopArticle from '../Articles/TopArticle';
 import LongArticle from '../Articles/LongArticle';
@@ -16,7 +15,6 @@ class NationalTeams extends Component {
         fetch('https://football-site-13535-default-rtdb.europe-west1.firebasedatabase.app/articles.json')
             .then(res => res.json())
             .then(res => {
-                // let data = Object.values(res);
 
                 let data = [];
 
@@ -28,10 +26,7 @@ class NationalTeams extends Component {
                 this.setState({ articles: data })
             })
             .catch(error => console.log(error))
-
     };
-
-
 
 
     render() {

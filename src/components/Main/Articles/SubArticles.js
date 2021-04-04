@@ -27,7 +27,6 @@ class SubArticles extends Component {
     };
 
     render() {
-
         return (
             <div>
                 {this.state.articles.slice(3, 11).map(x => <SubArticle

@@ -9,15 +9,14 @@ let Register = ({
 
         const email = e.target.email.value;
         const password = e.target.password.value;
-        
+
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(res => {
                 console.log('Register')
                 history.push('/')
             })
-            .catch(err => {console.log(err)
-            // email.value = '';
-            // password.value = '';)
+            .catch(err => {
+                console.log(err)
             });
     }
 

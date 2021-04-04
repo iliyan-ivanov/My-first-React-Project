@@ -17,10 +17,8 @@ let Login = ({
             })
             .catch(err => {
                 console.log(err)
-                // email.value = '';
-                // password.value = '';
             })
-            
+
     }
 
     return (

@@ -26,10 +26,7 @@ class BGFootballPage extends Component {
                 this.setState({ articles: data })
             })
             .catch(error => console.log(error))
-
     };
-
-
 
 
     render() {

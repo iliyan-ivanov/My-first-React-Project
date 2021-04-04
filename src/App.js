@@ -1,4 +1,4 @@
-import { Route, Link, NavLink, Redirect, Switch, Router } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import Header from './components/Header/Header';
 import Main from './components/Main/HomePage/Main';

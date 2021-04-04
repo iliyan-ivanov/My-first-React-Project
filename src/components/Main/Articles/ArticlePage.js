@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 const ArticlePage = ({
     match
@@ -16,19 +15,19 @@ const ArticlePage = ({
     }, []);
 
     return (
-      
-            <section className="info-part">
-                <div className="details-title">
-                    <h1>{article.title}</h1>
-                </div>
-                <div className="details-img">
-                    <img src={article.imageURL} />
-                </div>
-                <div className="details-description">
-                    <p>{article.description}</p>
-                </div>
-            </section>
-            
+
+        <section className="info-part">
+            <div className="details-title">
+                <h1>{article.title}</h1>
+            </div>
+            <div className="details-img">
+                <img src={article.imageURL} />
+            </div>
+            <div className="details-description">
+                <p>{article.description}</p>
+            </div>
+        </section>
+
     );
 }
 
