@@ -41,6 +41,7 @@ class TopArticles extends Component {
                     description={x.description}
                     image={x.imageURL}
                     id={x.id}
+                    category={x.category}
                 />)}
             </div>
         );

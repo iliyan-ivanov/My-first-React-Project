@@ -1,8 +1,9 @@
-import { Component } from 'react';
-import TopArticle from '../Main/Articles/TopArticle';
-import LongArticle from '../Main/Articles/LongArticle';
 
-class EuFootballPage extends Component {
+import { Component } from 'react';
+import TopArticle from '../Articles/TopArticle';
+import LongArticle from '../Articles/LongArticle';
+
+class NationalTeams extends Component {
     constructor(props) {
         super(props);
 
@@ -15,6 +16,7 @@ class EuFootballPage extends Component {
         fetch('https://football-site-13535-default-rtdb.europe-west1.firebasedatabase.app/articles.json')
             .then(res => res.json())
             .then(res => {
+                // let data = Object.values(res);
 
                 let data = [];
 
@@ -26,29 +28,34 @@ class EuFootballPage extends Component {
                 this.setState({ articles: data })
             })
             .catch(error => console.log(error))
+
     };
+
+
 
 
     render() {
 
         return (
             <div>
-                <h1 className="h1-heading">Europian Football</h1>
+                <h1 className="h1-heading">National Teams</h1>
 
-                {this.state.articles.filter(x => x.category == "Europian Football").slice(0, 3).map(x => <TopArticle
+                {this.state.articles.filter(x => x.category == "National Teams").slice(0, 3).map(x => <TopArticle
                     key={x.id}
                     title={x.title}
                     description={x.description}
                     image={x.imageURL}
                     id={x.id}
+                    category={x.category}
                 />)}
 
-                {this.state.articles.filter(x => x.category == "Europian Football").slice(3).map(x => <LongArticle
+                {this.state.articles.filter(x => x.category == "National Teams").slice(3).map(x => <LongArticle
                     key={x.id}
                     title={x.title}
                     description={x.description}
                     image={x.imageURL}
                     id={x.id}
+                    category={x.category}
                 />)}
 
             </div>
@@ -56,4 +63,4 @@ class EuFootballPage extends Component {
     }
 }
 
-export default EuFootballPage;
+export default NationalTeams;

@@ -14,8 +14,8 @@ let UppperNav = ({
         <nav className="upper-navigation">
             {user
                 ? <ul>
-                    <li className="listItem first-nav"><Link to="/create">Create</Link></li>
                     <li className="listItem first-nav" onClick={onLogoutClick}><Link to="/">Logout</Link></li>
+                    <li className="listItem first-nav"><Link to="/create">Create</Link></li>
                     <li className="listItem first-nav"><Link to="/">Welcome, {user.email}</Link></li>
                 </ul>
                 : <ul>

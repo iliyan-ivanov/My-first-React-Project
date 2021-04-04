@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import TopArticle from '../Main/Articles/TopArticle';
-import LongArticle from '../Main/Articles/LongArticle';
+import TopArticle from '../Articles/TopArticle';
+import LongArticle from '../Articles/LongArticle';
 
-class BGFootballPage extends Component {
+class EuFootballPage extends Component {
     constructor(props) {
         super(props);
 
@@ -26,32 +26,31 @@ class BGFootballPage extends Component {
                 this.setState({ articles: data })
             })
             .catch(error => console.log(error))
-
     };
-
-
 
 
     render() {
 
         return (
             <div>
-                <h1 className="h1-heading">Bulgarian Football</h1>
+                <h1 className="h1-heading">Europian Football</h1>
 
-                {this.state.articles.filter(x => x.category == "Bulgarian Football").slice(0, 3).map(x => <TopArticle
+                {this.state.articles.filter(x => x.category == "Europian Football").slice(0, 3).map(x => <TopArticle
                     key={x.id}
                     title={x.title}
                     description={x.description}
                     image={x.imageURL}
                     id={x.id}
+                    category={x.category}
                 />)}
 
-                {this.state.articles.filter(x => x.category == "Bulgarian Football").slice(3).map(x => <LongArticle
+                {this.state.articles.filter(x => x.category == "Europian Football").slice(3).map(x => <LongArticle
                     key={x.id}
                     title={x.title}
                     description={x.description}
                     image={x.imageURL}
                     id={x.id}
+                    category={x.category}
                 />)}
 
             </div>
@@ -59,4 +58,4 @@ class BGFootballPage extends Component {
     }
 }
 
-export default BGFootballPage;
+export default EuFootballPage;

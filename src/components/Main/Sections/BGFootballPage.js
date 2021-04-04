@@ -1,9 +1,8 @@
-
 import { Component } from 'react';
-import TopArticle from './Articles/TopArticle';
-import LongArticle from './Articles/LongArticle';
+import TopArticle from '../Articles/TopArticle';
+import LongArticle from '../Articles/LongArticle';
 
-class NationalTeams extends Component {
+class BGFootballPage extends Component {
     constructor(props) {
         super(props);
 
@@ -16,7 +15,6 @@ class NationalTeams extends Component {
         fetch('https://football-site-13535-default-rtdb.europe-west1.firebasedatabase.app/articles.json')
             .then(res => res.json())
             .then(res => {
-                // let data = Object.values(res);
 
                 let data = [];
 
@@ -38,22 +36,24 @@ class NationalTeams extends Component {
 
         return (
             <div>
-                <h1 className="h1-heading">National Teams</h1>
+                <h1 className="h1-heading">Bulgarian Football</h1>
 
-                {this.state.articles.filter(x => x.category == "National Teams").slice(0, 3).map(x => <TopArticle
+                {this.state.articles.filter(x => x.category == "Bulgarian Football").slice(0, 3).map(x => <TopArticle
                     key={x.id}
                     title={x.title}
                     description={x.description}
                     image={x.imageURL}
                     id={x.id}
+                    category={x.category}
                 />)}
 
-                {this.state.articles.filter(x => x.category == "National Teams").slice(3).map(x => <LongArticle
+                {this.state.articles.filter(x => x.category == "Bulgarian Football").slice(3).map(x => <LongArticle
                     key={x.id}
                     title={x.title}
                     description={x.description}
                     image={x.imageURL}
                     id={x.id}
+                    category={x.category}
                 />)}
 
             </div>
@@ -61,4 +61,4 @@ class NationalTeams extends Component {
     }
 }
 
-export default NationalTeams;
+export default BGFootballPage;
