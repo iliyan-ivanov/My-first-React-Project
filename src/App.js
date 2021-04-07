@@ -2,9 +2,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Header from './components/Header/Header';
 import Main from './components/Main/HomePage/Main';
-import EUFootball from './components/Main/Sections/EUFootballPage';
-import BGFootball from './components/Main/Sections/BGFootballPage';
-import NationalTeams from './components/Main/Sections/NationalTeamsPage'
+import Sections from './components/Main/Sections';
 import Footer from './components/Footer/Footer';
 import ArticlePage from './components/Main/Articles/ArticlePage';
 import Login from './components/Main/AuthPages/Login';
@@ -29,9 +27,9 @@ function App() {
                 <Route path="/" exact>
                     <Main />
                 </Route>
-                <Route path="/europianfootball" component={EUFootball} />
-                <Route path="/bulgarianfootball" component={BGFootball} />
-                <Route path="/nationalteams" component={NationalTeams} />
+                <Route path="/europianfootball" component={() => <Sections title="Europian Football"/>} />
+                <Route path="/bulgarianfootball" component={() => <Sections title="Bulgarian Football"/>} />
+                <Route path="/nationalteams" component={() => <Sections title="National Teams"/>} />
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
                 <Route path="/create" component={Create} />

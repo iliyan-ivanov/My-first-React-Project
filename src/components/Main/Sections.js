@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import TopArticle from '../Articles/TopArticle';
-import LongArticle from '../Articles/LongArticle';
+import TopArticle from './Articles/TopArticle';
+import LongArticle from './Articles/LongArticle';
 
-class EuFootballPage extends Component {
+class Sections extends Component {
     constructor(props) {
         super(props);
 
@@ -26,6 +26,7 @@ class EuFootballPage extends Component {
                 this.setState({ articles: data })
             })
             .catch(error => console.log(error))
+
     };
 
 
@@ -33,9 +34,9 @@ class EuFootballPage extends Component {
 
         return (
             <div>
-                <h1 className="h1-heading">Europian Football</h1>
+                <h1 className="h1-heading">{this.props.title}</h1>
 
-                {this.state.articles.filter(x => x.category == "Europian Football").slice(0, 3).map(x => <TopArticle
+                {this.state.articles.filter(x => x.category == this.props.title).slice(0, 3).map(x => <TopArticle
                     key={x.id}
                     title={x.title}
                     description={x.description}
@@ -44,7 +45,7 @@ class EuFootballPage extends Component {
                     category={x.category}
                 />)}
 
-                {this.state.articles.filter(x => x.category == "Europian Football").slice(3).map(x => <LongArticle
+                {this.state.articles.filter(x => x.category == this.props.title).slice(3).map(x => <LongArticle
                     key={x.id}
                     title={x.title}
                     description={x.description}
@@ -58,4 +59,4 @@ class EuFootballPage extends Component {
     }
 }
 
-export default EuFootballPage;
+export default Sections;
