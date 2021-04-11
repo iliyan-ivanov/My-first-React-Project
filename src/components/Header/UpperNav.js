@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import firebase from 'firebase/app';
+import { useContext } from 'react';
+import AuthContext from '../../AuthContext';
 
-let UppperNav = ({
-    user
-}) => {
+const UppperNav = () => {
+
+    const user = useContext(AuthContext);
 
     const onLogoutClick = (e) => {
         e.preventDefault();

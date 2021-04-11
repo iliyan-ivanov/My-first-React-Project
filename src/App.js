@@ -10,10 +10,12 @@ import Register from './components/Main/AuthPages/Register';
 import Create from './components/Main/CreatePage/Create';
 import { auth } from './config/firebase';
 import { useEffect, useState } from 'react';
+import AuthContext from './AuthContext';
+import isAuth from './hoc/isAuth';
 
 function App() {
 
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState(false);
 
     useEffect(() => {
         auth.onAuthStateChanged(setUser)
@@ -21,24 +23,27 @@ function App() {
 
     return (
         <div className="app">
-            <Header user={user} />
+            <AuthContext.Provider value={user}>
+                
+                <Header />
 
-            <Switch>
-                <Route path="/" exact>
-                    <Main />
-                </Route>
-                <Route path="/europianfootball" component={() => <Sections title="Europian Football"/>} />
-                <Route path="/bulgarianfootball" component={() => <Sections title="Bulgarian Football"/>} />
-                <Route path="/nationalteams" component={() => <Sections title="National Teams"/>} />
-                <Route path="/login" component={Login} />
-                <Route path="/register" component={Register} />
-                <Route path="/create" component={Create} />
-                <Route path="/:category/:articleId" component={ArticlePage} />
-                <Route render={() => <div className="errorPage"> <h1>Your url is not valid!</h1><h1>Please insert valid url!</h1> </div> } />
-            </Switch>
+                <Switch>
+                    <Route path="/" exact>
+                        <Main />
+                    </Route>
+                    <Route path="/europianfootball" component={() => <Sections title="Europian Football" />} />
+                    <Route path="/bulgarianfootball" component={() => <Sections title="Bulgarian Football" />} />
+                    <Route path="/nationalteams" component={() => <Sections title="National Teams" />} />
+                    <Route path="/login" component={Login} />
+                    <Route path="/register" component={Register} />
+                    <Route path="/create" component={isAuth(Create)} />
+                    <Route path="/:category/:articleId" component={ArticlePage} />
+                    <Route render={() => <div className="errorPage"> <h1>Your url is not valid!</h1><h1>Please insert valid url!</h1> </div>} />
+                </Switch>
 
-            <Footer />
+                <Footer />
 
+            </AuthContext.Provider>
         </div>
     );
 }

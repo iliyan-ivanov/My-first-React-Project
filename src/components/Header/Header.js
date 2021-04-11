@@ -1,12 +1,11 @@
 import UppperNav from './UpperNav';
 import LowerNav from './LowerNav';
 
-let Header = ({
-    user
-}) => {
+let Header = () => {
+
     return (
         <div className="header">
-           <UppperNav user={user} />
+           <UppperNav />
            <LowerNav />
         </div>
     );
