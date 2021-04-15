@@ -1,23 +1,59 @@
+import { useState, useEffect } from 'react';
+import ErrorDiv from '../ErrorDiv/ErrorDiv'
 import firebase from 'firebase/app';
 
-let Login = ({
+
+const Login = ({
     history
 }) => {
+
+    const [emailErrorMessage, setEmailErrorMessage] = useState('');
+    const [passwordErrorMessage, setPasswordErrorMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const onLoginHandler = (e) => {
         e.preventDefault();
 
+        let isPassed = true;
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        firebase.auth().signInWithEmailAndPassword(email, password)
-            .then((res) => {
-                console.log(res);
-                history.push('/')
-            })
-            .catch(err => {
-                console.log(err)
-            })
+        if (email.length < 1) {
+            isPassed = false;
+            setEmailErrorMessage('Please insert email!')
+        }
+
+        if (email.length < 6) {
+            isPassed = false;
+            setEmailErrorMessage('Please insert email!')
+        }
+
+        if (password.length < 5) {
+            isPassed = false;
+            setPasswordErrorMessage('Password must be at least 6 characters long!')
+        }
+
+        if (password.length < 1) {
+            isPassed = false;
+            setPasswordErrorMessage('Please insert password!')
+        }
+
+
+        if (isPassed) {
+
+            setEmailErrorMessage('');
+            setPasswordErrorMessage('');
+
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then((res) => {
+                    console.log(res);
+                    history.push('/')
+                })
+                .catch(err => {
+                    setErrorMessage(err.message)
+                    console.log(err.message)
+                })
+        }
 
     }
 
@@ -27,11 +63,15 @@ let Login = ({
             <div className="auth-div">
                 <label htmlFor="email">Email</label>
                 <input type="email" id="email" placeholder="Email" name="email" />
+                <ErrorDiv>{emailErrorMessage}</ErrorDiv>
 
                 <label htmlFor="password">Password</label>
                 <input type="password" id="password" placeholder="Password" name="password" />
+                <ErrorDiv>{passwordErrorMessage}</ErrorDiv>
+
             </div>
             <button type="submit" className="auth-btn">Login</button>
+            <ErrorDiv>{errorMessage}</ErrorDiv>
 
 
         </form>
