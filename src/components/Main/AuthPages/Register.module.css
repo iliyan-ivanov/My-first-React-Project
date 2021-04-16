@@ -1,0 +1,24 @@
+.registerForm {
+    padding: 38px;
+    margin: 100px;
+    margin-left: 400px;
+    border-style: solid;
+    height: 290px;
+    width: 240px;
+    text-align: center;
+    display: block;
+    background-color: #255c92;
+  }
+  
+  .regDiv {
+    padding-bottom: 20px;
+  }
+  
+  .regH2 {
+    padding-bottom: 20px;
+  }
+  
+  .regBtn {
+    cursor: pointer;
+    margin: 10px;
+  }

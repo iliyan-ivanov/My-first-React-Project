@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
-import ErrorDiv from '../ErrorDiv/ErrorDiv'
+import { useState } from 'react';
+import ErrorDiv from '../ErrorDiv/ErrorDiv';
 import firebase from 'firebase/app';
+import style from './Login.module.css';
 
 
 const Login = ({
@@ -17,6 +18,9 @@ const Login = ({
         let isPassed = true;
         const email = e.target.email.value;
         const password = e.target.password.value;
+
+        setEmailErrorMessage('');
+        setPasswordErrorMessage('');
 
         if (email.length < 1) {
             isPassed = false;
@@ -41,26 +45,24 @@ const Login = ({
 
         if (isPassed) {
 
-            setEmailErrorMessage('');
-            setPasswordErrorMessage('');
-
+            
             firebase.auth().signInWithEmailAndPassword(email, password)
-                .then((res) => {
-                    console.log(res);
-                    history.push('/')
-                })
-                .catch(err => {
-                    setErrorMessage(err.message)
-                    console.log(err.message)
-                })
+            .then((res) => {
+                console.log(res);
+                history.push('/')
+            })
+            .catch(err => {
+                setErrorMessage(err.message)
+                console.log(err.message)
+            })
         }
-
     }
 
+
     return (
-        <form className="login-form" onSubmit={onLoginHandler}>
-            <h2 className="auth-h2">Login</h2>
-            <div className="auth-div">
+        <form className={style.loginForm} onSubmit={onLoginHandler}>
+            <h2 className={style.authH2}>Login</h2>
+            <div className={style.authDiv}>
                 <label htmlFor="email">Email</label>
                 <input type="email" id="email" placeholder="Email" name="email" />
                 <ErrorDiv>{emailErrorMessage}</ErrorDiv>
@@ -70,7 +72,7 @@ const Login = ({
                 <ErrorDiv>{passwordErrorMessage}</ErrorDiv>
 
             </div>
-            <button type="submit" className="auth-btn">Login</button>
+            <button type="submit" className={style.authBtn}>Login</button>
             <ErrorDiv>{errorMessage}</ErrorDiv>
 
 

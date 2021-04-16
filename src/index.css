@@ -223,30 +223,6 @@ p {
   color: rgb(0, 0, 182);
 }
 
-.login-form {
-  padding: 38px;
-  margin: 100px;
-  margin-left: 400px;
-  border-style: solid;
-  height: 240px;
-  width: 240px;
-  text-align: center;
-  display: block;
-  background-color: #255c92;
-}
-
-.auth-div {
-  padding-bottom: 30px;
-}
-
-.auth-h2 {
-  padding-bottom: 30px;
-}
-
-.auth-btn {
-  cursor: pointer;
-}
-
 .details-title {
   padding-top: 30px;
 }

@@ -1,0 +1,23 @@
+.loginForm {
+    padding: 38px;
+    margin: 100px;
+    margin-left: 400px;
+    border-style: solid;
+    height: 240px;
+    width: 240px;
+    text-align: center;
+    display: block;
+    background-color: #255c92;
+  }
+  
+  .authDiv {
+    padding-bottom: 30px;
+  }
+  
+  .authH2 {
+    padding-bottom: 30px;
+  }
+  
+  .authBtn {
+    cursor: pointer;
+  }
