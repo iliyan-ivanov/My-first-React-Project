@@ -3,21 +3,30 @@
   }
   
   .createTitle {
-    margin-bottom: 30px;
     width: 1160px;
     height: 50px;
+  }
+
+  .titleDiv {
+    margin-bottom: 30px;
   }
   
   .createDescription {
     display: block;
     height: 100px;
     width: 1160px;
-    margin-bottom: 20px;
   }
   
+  .descriptionDiv {
+    margin-bottom: 20px;
+  }
+
   .createImg {
-    margin-bottom: 30px;
     width: 1160px;
+  }
+
+  .imgDiv {
+    margin-bottom: 30px;
   }
   
   .createBtn {

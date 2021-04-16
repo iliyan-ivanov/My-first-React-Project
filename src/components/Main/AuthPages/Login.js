@@ -29,7 +29,7 @@ const Login = ({
 
         if (email.length < 6) {
             isPassed = false;
-            setEmailErrorMessage('Please insert email!')
+            setEmailErrorMessage('Email is too short!')
         }
 
         if (password.length < 5) {
