@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react';
 import AuthContext from './AuthContext';
 import isAuth from './hoc/isAuth';
 
+
 function App() {
 
     const [user, setUser] = useState(false);
