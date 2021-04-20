@@ -1,7 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 
 import Header from './components/Header/Header';
-import Main from './components/Main/HomePage/Main';
+import Main from './components/Main/HomePage/HomePage';
 import Sections from './components/Main/Sections';
 import Footer from './components/Footer/Footer';
 import ArticlePage from './components/Main/Articles/ArticlePage';
@@ -12,7 +12,6 @@ import { auth } from './config/firebase';
 import { useEffect, useState } from 'react';
 import AuthContext from './AuthContext';
 import isAuth from './hoc/isAuth';
-
 
 function App() {
 
