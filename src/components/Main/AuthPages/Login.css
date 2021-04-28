@@ -1,4 +1,4 @@
-.loginForm {
+.login-form {
     padding: 38px;
     margin: 100px;
     margin-left: 400px;
@@ -10,14 +10,14 @@
     background-color: #255c92;
   }
   
-  .authDiv {
+  .auth-div {
     padding-bottom: 30px;
   }
   
-  .authH2 {
+  .auth-h2 {
     padding-bottom: 30px;
   }
   
-  .authBtn {
+  .auth-btn {
     cursor: pointer;
   }

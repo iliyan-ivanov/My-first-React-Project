@@ -1,0 +1,11 @@
+.error-page {
+    color: red;
+    padding-left: 400px;
+    padding-top: 115px;
+    padding-bottom: 320px;
+    font-style: italic;
+  }
+  
+  .error-page h1 {
+    font-family:'Times New Roman', Times, serif;
+  }

@@ -12,6 +12,7 @@ import { auth } from './config/firebase';
 import { useEffect, useState } from 'react';
 import AuthContext from './AuthContext';
 import isAuth from './hoc/isAuth';
+import './App.css';
 
 function App() {
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ErrorDiv from '../ErrorDiv/ErrorDiv';
-import style from './Create.module.css';
+import './Create.css';
 
 const Create = () => {
     const url = "https://football-site-13535-default-rtdb.europe-west1.firebasedatabase.app/articles.json";
@@ -87,38 +87,38 @@ const Create = () => {
     }
 
     return (
-        <form className={style.createForm} onSubmit={onCreateHandler}>
+        <form className="create-form" onSubmit={onCreateHandler}>
             <h1>Create Article</h1>
-            <div className={style.createDiv}>
+            <div className="create-div">
                 <div>
                     <label htmlFor="category">Choose Category</label>
-                    <select className={style.categorySelect} type="text" name="category">
+                    <select className="category-select" type="text" name="category">
                         <option value="Europian Football">Europian Football</option>
                         <option value="Bulgarian Football">Bulgarian Football</option>
                         <option value="National Teams">National Teams</option>
                     </select>
                 </div>
 
-                <div className={style.titleDiv}>
+                <div className="title-div">
                     <label htmlFor="title">Article Title</label>
-                    <input type="text" className={style.createTitle} id="title" placeholder="Article Title" name="title" />
+                    <input type="text" className="create-title" id="title" placeholder="Article Title" name="title" />
                     <ErrorDiv>{titleErrorMessage}</ErrorDiv>
                 </div>
 
-                <div className={style.descriptionDiv}>
+                <div className="description-div">
                     <label htmlFor="description">Article Description</label>
-                    <textarea className={style.createDescription} id="description" placeholder="Article Description..." name="description"></textarea>
+                    <textarea className="create-description" id="description" placeholder="Article Description..." name="description"></textarea>
                     <ErrorDiv>{descriptionErrorMessage}</ErrorDiv>
                 </div>
 
-                <div className={style.imgDiv}>
+                <div className="img-div">
                     <label htmlFor="imageURL">Image url</label>
-                    <input type="text" className={style.createImg} id="imageURL" placeholder="Image Url" name="imageURL" />
+                    <input type="text" className="create-img" id="imageURL" placeholder="Image Url" name="imageURL" />
                     <ErrorDiv>{imgErrorMessage}</ErrorDiv>
                 </div>
 
             </div>
-            <button type="submit" className={style.createBtn}>Submit</button>
+            <button type="submit" className="create-btn">Submit</button>
         </form>
     );
 }

@@ -1,4 +1,4 @@
-import style from './ErrorDiv.module.css';
+import './ErrorDiv.css';
 
 const ErrorDiv = ({children}) => {
 
@@ -7,7 +7,7 @@ const ErrorDiv = ({children}) => {
     }
 
     return (
-        <div className={style.errorDiv}>{children}</div>
+        <div className="error-div">{children}</div>
     )
 
 }

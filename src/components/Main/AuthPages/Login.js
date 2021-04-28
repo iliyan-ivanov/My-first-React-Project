@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ErrorDiv from '../ErrorDiv/ErrorDiv';
 import firebase from 'firebase/app';
-import style from './Login.module.css';
+import './Login.css';
 
 
 const Login = ({
@@ -44,7 +44,6 @@ const Login = ({
 
 
         if (isPassed) {
-
             
             firebase.auth().signInWithEmailAndPassword(email, password)
             .then((res) => {
@@ -60,9 +59,9 @@ const Login = ({
 
 
     return (
-        <form className={style.loginForm} onSubmit={onLoginHandler}>
-            <h2 className={style.authH2}>Login</h2>
-            <div className={style.authDiv}>
+        <form className="login-form" onSubmit={onLoginHandler}>
+            <h2 className="auth-h2">Login</h2>
+            <div className="auth-div">
                 <label htmlFor="email">Email</label>
                 <input type="email" id="email" placeholder="Email" name="email" />
                 <ErrorDiv>{emailErrorMessage}</ErrorDiv>
@@ -72,7 +71,7 @@ const Login = ({
                 <ErrorDiv>{passwordErrorMessage}</ErrorDiv>
 
             </div>
-            <button type="submit" className={style.authBtn}>Login</button>
+            <button type="submit" className="auth-btn">Login</button>
             <ErrorDiv>{errorMessage}</ErrorDiv>
 
 

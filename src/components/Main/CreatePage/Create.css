@@ -1,41 +1,41 @@
-.createDiv {
+.create-div {
     display: block;
   }
   
-  .createTitle {
+  .create-title {
     width: 1160px;
     height: 50px;
   }
 
-  .titleDiv {
+  .title-div {
     margin-bottom: 30px;
   }
   
-  .createDescription {
+  .create-description {
     display: block;
     height: 100px;
     width: 1160px;
   }
   
-  .descriptionDiv {
+  .description-div {
     margin-bottom: 20px;
   }
 
-  .createImg {
+  .create-img {
     width: 1160px;
   }
 
-  .imgDiv {
+  .img-div {
     margin-bottom: 30px;
   }
   
-  .createBtn {
+  .create-btn {
     margin-bottom: 42px;
     margin-left: 555px;
     cursor: pointer;
   }
 
-  .categorySelect {
+  .category-select {
     margin-bottom: 30px;
     display: flex;
   }

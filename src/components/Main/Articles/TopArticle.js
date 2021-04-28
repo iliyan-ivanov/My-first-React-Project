@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import './TopArticle.css';
 
 let TopArticle = ({
     title,

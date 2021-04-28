@@ -1,0 +1,26 @@
+.lower-navigation {
+    width: 100%;
+    background-color:rgb(23, 49, 58);
+    color: white;
+    padding-top: 7px;
+    padding-bottom: 3px;
+    display: block;
+    height: 30px;
+  }
+  
+  nav .main-nav-item {
+    cursor: pointer;
+    display: inline;
+  }
+  
+  nav .main-nav-item a {
+    color: white;
+    text-decoration: none;
+    padding-left: 130px;
+  }
+  
+  nav .main-nav-item a:hover {
+    font-style: italic;
+    font-weight:inherit;
+    color:rgb(0, 101, 252);
+  }
