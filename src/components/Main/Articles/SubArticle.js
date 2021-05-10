@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import './SubArticle.css';
 
 const TopArticle = ({
     title,
